@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atharv Pise | Technical Support Engineer</title>
+<meta name="description" content="Portfolio of Atharv Pise – Technical Support Engineer specializing in Data Centers, HPC Clusters, and Cloud Infrastructure."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&family=Bebas+Neue&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ══════ CINEMATIC INTRO SCREEN ══════ -->
+<div id="intro-overlay">
+
+  <!-- Animated aurora background -->
+  <canvas id="intro-canvas"></canvas>
+
+  <!-- Film grain noise texture -->
+  <svg class="intro-noise-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noise-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise-filter)" opacity="0.04"/>
+  </svg>
+
+  <!-- Cyber grid -->
+  <div class="intro-grid"></div>
+
+  <!-- Cinematic curtain panels -->
+  <div class="curtain curtain-top"></div>
+  <div class="curtain curtain-bot"></div>
+
+  <!-- ── Main content ── -->
+  <div class="intro-content">
+
+    <!-- Terminal boot line -->
+    <div class="intro-terminal">
+      <span class="t-prompt">❯_</span>
+      <span id="terminal-text"></span><span class="t-cursor" id="t-cursor">█</span>
+    </div>
+
+    <!-- Massive scramble name -->
+    <div class="intro-name-wrap" id="intro-name-wrap">
+      <div class="name-eyebrow">PORTFOLIO · 2026</div>
+      <h1 class="glitch-name" data-text="ATHARV PISE" id="glitch-name">ATHARV PISE</h1>
+      <div class="name-rule"></div>
+      <p class="name-role" id="name-role">
+        Technical Support Engineer &nbsp;·&nbsp; HPC Specialist &nbsp;·&nbsp; Cloud Architect
+      </p>
+    </div>
+
+    <!-- SVG ring loader -->
+    <div class="ring-outer" id="ring-outer">
+      <svg class="ring-svg" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#7C6FFF"/>
+            <stop offset="50%"  stop-color="#FF6B8A"/>
+            <stop offset="100%" stop-color="#2DD4BF"/>
+          </linearGradient>
+        </defs>
+        <circle class="ring-track" cx="70" cy="70" r="56"/>
+        <circle class="ring-prog"  cx="70" cy="70" r="56" id="ring-prog"/>
+        <text x="70" y="62" class="ring-num"  id="ring-num">0</text>
+        <text x="70" y="80" class="ring-unit">%</text>
+        <text x="70" y="95" class="ring-sub">LOADED</text>
+      </svg>
+      <div class="ring-status" id="ring-status">Calibrating Systems…</div>
+    </div>
+
+    <!-- Floating tech pills -->
+    <div class="intro-tags" id="intro-tags">
+      <span>OpenStack</span><span>Ansible</span><span>HPC Clusters</span>
+      <span>Linux Kernel</span><span>Docker</span><span>Python</span>
+      <span>Data Center</span><span>Cloud Infra</span>
+    </div>
+
+  </div><!-- /intro-content -->
+
+  <!-- Corner decorations -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+</div><!-- /intro-overlay -->
+
+<!-- BG LAYERS -->
+<div id="particles"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="orb orb4"></div>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav id="navbar">
+  <div class="nav-logo">Atharv Pise</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <!-- <li><a href="#certifications">Certifications</a></li> -->
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <a href="assets/documents/Atharv_Pise_Resume.pdf" download class="nav-cta">↓ Resume</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <div class="mobile-drawer-inner">
+    <ul class="mobile-links">
+      <li><a href="#about"          onclick="closeDrawer()">About</a></li>
+      <li><a href="#skills"         onclick="closeDrawer()">Skills</a></li>
+      <li><a href="#experience"     onclick="closeDrawer()">Experience</a></li>
+      <li><a href="#certifications" onclick="closeDrawer()">Certifications</a></li>
+      <li><a href="#projects"       onclick="closeDrawer()">Projects</a></li>
+      <li><a href="#contact"        onclick="closeDrawer()">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-divider"></div>
+    <div class="mobile-drawer-bottom">
+      <a href="assets/documents/Atharv_Pise_Resume.pdf" download class="mobile-resume-btn">↓ Download Resume</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="hero-content fade-in">
+    <div class="hero-tag">Technical Support Engineer</div>
+    <h1 class="hero-name">Atharv <span class="hl">Pise</span></h1>
+    <p class="hero-role">Data Center &amp; HPC Infrastructure Specialist</p>
+
+    <div class="hero-desc-wrap">
+      <p class="hero-desc-static">
+        Building and managing enterprise-grade data center infrastructure.<br/>
+        Specializing in HPC clusters, server hardware, OpenStack cloud deployment,
+        and automation with Ansible.
+      </p>
+      <div class="typewriter-line">
+        <span id="typewriter"></span><span class="cursor" id="tw-cursor"></span>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="assets/documents/Atharv_Pise_Resume.pdf" download class="btn-primary">↓ &nbsp;Download Resume</a>
+      <a href="#experience" class="btn-secondary">View My Work →</a>
+    </div>
+  </div>
+
+  <div class="profile-card fade-in d2">
+    <div class="profile-ring-wrap">
+      <img src="assets/images/Atharv_Pise_Photo.jpg" alt="Atharv Pise" class="profile-photo"/>
+    </div>
+    <h2 class="profile-name">Atharv Pise</h2>
+    <p class="profile-role-tag">TSE @ Netweb Technology</p>
+    <div class="profile-stats">
+      <div class="stat-box">
+        <span class="stat-num">HPC</span>
+        <span class="stat-label">Specialist</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">C-DAC</span>
+        <span class="stat-label">Certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ABOUT ══════ -->
+<section id="about" class="section-wrap">
+  <div class="section-header fade-in">
+    <span class="section-num" style="color:var(--c1)">01 /</span>
+    <h2 class="section-title">About <em class="grad1">Me</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <p>I'm <strong>Atharv Pise</strong>, a passionate Technical Support Engineer currently working at <strong>Netweb Technology India Ltd.</strong>, where I manage live data center infrastructure and help clients deploy enterprise-grade computing solutions.</p>
+      <p>My journey in electronics and telecommunications, combined with specialized training in <strong>High Performance Computing and System Administration (HPCSA)</strong> from C-DAC, has given me a unique blend of hardware-level expertise and software automation skills.</p>
+      <p>I thrive at the intersection of <strong>hardware and software</strong> — whether it's replacing a GPU in a live server, deploying an HPC cluster with SLURM, or automating infrastructure with Ansible. I love solving complex problems and keeping critical systems online.</p>
+    </div>
+    <div class="about-highlights fade-in d1">
+      <div class="highlight-item">
+        <span class="hi-icon">📍</span>
+        <div><div class="hi-label">Location</div><div class="hi-val">Pune, Maharashtra, India</div></div>
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">🏢</span>
+        <div><div class="hi-label">Employer</div><div class="hi-val">Netweb Technology India Ltd.</div></div>
+      </div>
+      <!-- Certification highlight with Download pill -->
+      <div class="highlight-item highlight-cert">
+        <div class="hi-cert-left">
+          <span class="hi-icon">📜</span>
+          <div><div class="hi-label">Certification</div><div class="hi-val">C-DAC HPCSA Certified</div></div>
+        </div>
+        <a href="assets/documents/CDAC_HPCSA_Certificate.pdf" download class="cert-dl-pill">↓ Download</a>
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">⚡</span>
+        <div><div class="hi-label">Focus Areas</div><div class="hi-val">Data Centers · HPC · Cloud · Automation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SKILLS ══════ -->
+<section id="skills" class="section-alt">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num" style="color:var(--c2)">02 /</span>
+      <h2 class="section-title">Technical <em class="grad2">Skills</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-cat">🖥️ Hardware</div>
+        <div class="skill-tags">
+          <span>Server Installation</span><span>Motherboard Replacement</span>
+          <span>CPU / RAM / GPU</span><span>BIOS Configuration</span>
+          <span>RAID Setup</span><span>Peripherals</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in d1">
+        <div class="skill-cat">⚙️ HPC &amp; Cluster</div>
+        <div class="skill-tags">
+          <span>SLURM</span><span>xCAT</span>
+          <span>HPC Cluster Deployment</span><span>Node Management</span>
+          <span>Job Scheduling</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in d2">
+        <div class="skill-cat">🐧 Operating Systems</div>
+        <div class="skill-tags">
+          <span>Linux (RHEL / Ubuntu)</span><span>OS Installation</span>
+          <span>Network Config</span><span>System Performance</span>
+          <span>Troubleshooting</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-cat">🤖 Automation &amp; Cloud</div>
+        <div class="skill-tags">
+          <span>Ansible</span><span>OpenStack</span>
+          <span>Docker</span><span>Jenkins</span>
+          <span>Basic AWS</span><span>Bash Scripting</span>
+          <span>Git / GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in d1">
+        <div class="skill-cat">📡 Networking</div>
+        <div class="skill-tags">
+          <span>TCP/IP</span><span>Network Configuration</span>
+          <span>Data Center Networking</span><span>IPMI / BMC</span>
+          <span>Netplan Configuration</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in d2">
+        <div class="skill-cat">🛠️ Tools &amp; Monitoring</div>
+        <div class="skill-tags">
+          <span>Hardware Diagnostics</span><span>System Monitoring</span>
+          <span>Prometheus</span><span>Grafana</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ EXPERIENCE ══════ -->
+<section id="experience" class="section-wrap">
+  <div class="section-header fade-in">
+    <span class="section-num" style="color:var(--c3)">03 /</span>
+    <h2 class="section-title">Work <em class="grad2">Experience</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-card fade-in">
+    <div class="exp-header">
+      <div>
+        <div class="exp-company">Netweb Technology India Ltd.</div>
+        <div class="exp-role">Technical Support Engineer</div>
+      </div>
+      <div class="exp-meta">
+        <div>📅 2025 – Present</div>
+        <div>📍 Pune, India</div>
+        <span class="active-badge">● ACTIVE</span>
+      </div>
+    </div>
+    <div class="exp-resp">
+      <div class="resp-item"><div class="resp-icon">🖥️</div><div class="resp-text">Manage live Data Center servers — hardware installation and replacement of motherboards, CPUs, RAM, GPUs, and peripherals</div></div>
+      <div class="resp-item"><div class="resp-icon">🤝</div><div class="resp-text">Understand client requirements and configure servers with OS, RAID, and application installations</div></div>
+      <div class="resp-item"><div class="resp-icon">🔍</div><div class="resp-text">Monitor and troubleshoot hardware issues, perform BIOS diagnostics and system performance checks</div></div>
+      <div class="resp-item"><div class="resp-icon">⚡</div><div class="resp-text">Deploy and manage HPC clusters using SLURM workload manager and xCAT cluster management toolkit</div></div>
+      <div class="resp-item"><div class="resp-icon">🤖</div><div class="resp-text">Implement automation and deployment tasks using Ansible playbooks for infrastructure management</div></div>
+      <div class="resp-item"><div class="resp-icon">☁️</div><div class="resp-text">Hands-on OpenStack cloud projects — full deployment from hardware setup to OS and network configuration</div></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ══════ CERTIFICATIONS ══════ -->
+ <!--
+<section id="certifications" class="section-alt">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num" style="color:var(--c4)">04 /</span>
+      <h2 class="section-title">My <em class="grad3">Certifications</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-in">
+        <span class="cert-icon">🏆</span>
+        <div class="cert-year">2024 – 2025</div>
+        <div class="cert-title">HPCSA – High Performance Computing &amp; System Administration</div>
+        <div class="cert-inst">C-DAC · Centre for Development of Advanced Computing</div>
+        <a href="assets/documents/CDAC_HPCSA_Certificate.pdf" download class="cert-dl">↓ Download Certificate</a>
+      </div>
+      <div class="cert-card fade-in d1">
+        <span class="cert-icon">🎓</span>
+        <div class="cert-year">2021 – 2024</div>
+        <div class="cert-title">B.Tech – Electronics &amp; Telecommunication Engineering</div>
+        <div class="cert-inst">Rashtrasant Tukadoji Maharaj Nagpur University</div>
+        <a href="assets/documents/BTech_Degree_2024.pdf" download class="cert-dl">↓ Download Degree</a>
+      </div>
+      <div class="cert-card fade-in d2">
+        <span class="cert-icon">🏅</span>
+        <div class="cert-year">2018 – 2021</div>
+        <div class="cert-title">Diploma – Electronics &amp; Telecommunication</div>
+        <div class="cert-inst">Maharashtra State Board of Technical Education</div>
+        <a href="assets/documents/Diploma_ETC_2021.pdf" download class="cert-dl">↓ Download Diploma</a>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+
+
+
+
+<!-- ══════ PROJECTS ══════ -->
+<section id="projects" class="section-wrap">
+  <div class="section-header fade-in">
+    <span class="section-num" style="color:var(--c6)">05 /</span>
+    <h2 class="section-title">Featured <em class="grad1">Projects</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="proj-list">
+
+    <!-- ── PROJECT 1: Bio-Informatics HPC ── -->
+    <div class="proj-item fade-in">
+      <div class="proj-item-header">
+        <div class="proj-item-left">
+          <div class="proj-badge violet">C-DAC Pune · HPC</div>
+          <h3 class="proj-item-title">Bio-Informatics HPC Cluster Setup</h3>
+          <p class="proj-item-sub">High Performance Computing infrastructure for bioinformatics research workloads — deployed end-to-end from hardware to scheduler configuration.</p>
+        </div>
+        <div class="proj-status-badge active-badge">● Live</div>
+      </div>
+
+      <!-- Hardware Summary Strip -->
+      <div class="proj-hw-strip">
+        <div class="hw-chip"><span>🖥️</span>2× Master Nodes</div>
+        <div class="hw-chip"><span>🔧</span>1× Service Node</div>
+        <div class="hw-chip"><span>💾</span>4× High-Memory Nodes</div>
+        <div class="hw-chip"><span>🎮</span>3× GPU Nodes</div>
+        <div class="hw-chip"><span>⚡</span>17× Compute Nodes</div>
+      </div>
+
+      <!-- 3-D Architecture Diagram -->
+      <div class="proj-arch-wrap">
+        <div class="arch-label">Cluster Architecture — 3D Flow View</div>
+        <div class="arch-3d">
+          <!-- Layer 0: User -->
+          <div class="arch-layer layer-user">
+            <div class="arch-node node-user">
+              <div class="arch-node-icon">👤</div>
+              <div class="arch-node-name">User / Researcher</div>
+              <div class="arch-node-sub">Submits SLURM Job</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down"><span>SSH Login</span></div>
+
+          <!-- Layer 1: Service Node -->
+          <div class="arch-layer layer-service">
+            <div class="arch-node node-service">
+              <div class="arch-node-icon">🔐</div>
+              <div class="arch-node-name">Service / Login Node</div>
+              <div class="arch-node-sub">LDAP Auth · Job Submission</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down"><span>SLURM Job Dispatch</span></div>
+
+          <!-- Layer 2: Master HA Pair -->
+          <div class="arch-layer layer-master">
+            <div class="arch-node node-master primary-node">
+              <div class="arch-node-badge">PRIMARY</div>
+              <div class="arch-node-icon">🟢</div>
+              <div class="arch-node-name">Master Node 1</div>
+              <div class="arch-node-sub">SLURM Controller · Active</div>
+            </div>
+            <div class="arch-ha-line">
+              <div class="ha-label">HA Failover</div>
+              <div class="ha-arrows">⇄</div>
+            </div>
+            <div class="arch-node node-master secondary-node">
+              <div class="arch-node-badge sec">STANDBY</div>
+              <div class="arch-node-icon">🟡</div>
+              <div class="arch-node-name">Master Node 2</div>
+              <div class="arch-node-sub">SLURM Backup · Passive</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down"><span>Job Scheduling</span></div>
+
+          <!-- Layer 3: Worker Nodes -->
+          <div class="arch-layer layer-workers">
+            <div class="arch-node node-himem">
+              <div class="arch-node-icon">💾</div>
+              <div class="arch-node-name">High Memory</div>
+              <div class="arch-node-sub">4 Nodes</div>
+            </div>
+            <div class="arch-node node-gpu">
+              <div class="arch-node-icon">🎮</div>
+              <div class="arch-node-name">GPU Nodes</div>
+              <div class="arch-node-sub">3 Nodes</div>
+            </div>
+            <div class="arch-node node-compute">
+              <div class="arch-node-icon">⚡</div>
+              <div class="arch-node-name">Compute</div>
+              <div class="arch-node-sub">17 Nodes</div>
+            </div>
+          </div>
+
+          <!-- Layer 4: Shared Services -->
+          <div class="arch-arrow-up"><span>Monitoring · Storage</span></div>
+          <div class="arch-layer layer-infra">
+            <div class="arch-node node-infra">
+              <div class="arch-node-icon">📊</div>
+              <div class="arch-node-name">Grafana</div>
+              <div class="arch-node-sub">Cluster Monitoring</div>
+            </div>
+            <div class="arch-node node-infra">
+              <div class="arch-node-icon">🗄️</div>
+              <div class="arch-node-name">Lustre FS</div>
+              <div class="arch-node-sub">Shared Storage</div>
+            </div>
+            <div class="arch-node node-infra">
+              <div class="arch-node-icon">🔑</div>
+              <div class="arch-node-name">LDAP</div>
+              <div class="arch-node-sub">Auth &amp; Identity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Involvement -->
+      <div class="proj-involvement">
+        <div class="pi-label">My Involvement</div>
+        <div class="pi-tags">
+          <span class="pi-tag">🔧 Hardware Implementation</span>
+          <span class="pi-tag">🐧 OS Installation</span>
+          <span class="pi-tag">📦 Local Repository Setup</span>
+          <span class="pi-tag">🗄️ Lustre Configuration</span>
+          <span class="pi-tag">⚙️ SLURM Configuration</span>
+          <span class="pi-tag">🔑 LDAP Configuration</span>
+          <span class="pi-tag">📊 Grafana Monitoring</span>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="proj-techs" style="padding:0;margin-top:1.2rem;">
+        <span class="ptag">SLURM</span><span class="ptag">xCAT</span>
+        <span class="ptag">Lustre FS</span><span class="ptag">LDAP</span>
+        <span class="ptag">Grafana</span><span class="ptag">Linux RHEL</span>
+        <span class="ptag">High-Memory Nodes</span><span class="ptag">GPU Nodes</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 2: OpenStack Cloud Deployment ── -->
+    <div class="proj-item proj-item-cyan fade-in d1">
+      <div class="proj-item-header">
+        <div class="proj-item-left">
+          <div class="proj-badge cyan">C-DAC Pune · HPC</div>
+          <h3 class="proj-item-title">OpenStack Cloud Deployment — HPC</h3>
+          <p class="proj-item-sub">Enterprise private cloud built on OpenStack for GPU-accelerated HPC workloads — Ceph distributed storage, JBOD controllers, and Nvidia A1000 GPU compute nodes.</p>
+        </div>
+        <div class="proj-status-badge" style="background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.35);color:#fb923c;">⚙️ Ongoing</div>
+      </div>
+
+      <!-- Hardware Summary Strip -->
+      <div class="proj-hw-strip">
+        <div class="hw-chip"><span>🖥️</span>3× Master Nodes</div>
+        <div class="hw-chip"><span>🎮</span>17× Compute (Nvidia A1000 · 3 GPU/server)</div>
+        <div class="hw-chip"><span>💿</span>6× Ceph Storage</div>
+        <div class="hw-chip"><span>🔌</span>1× JBOD Controller</div>
+        <div class="hw-chip"><span>📦</span>2× JBOD Units</div>
+      </div>
+
+      <!-- Network Diagram Image -->
+      <!--
+      <div class="proj-diagram-wrap">
+        <div class="proj-diagram-label">
+          <span>🌐</span> Cloud Network Architecture Diagram
+        </div>
+        <div class="proj-diagram-img-wrap">
+          <img
+            src="assets/images/openstack_network_diagram.jpg"
+            alt="OpenStack Cloud Network Diagram — showing Client Uplink Switch, SN2700 100G Switch, Arista 100G Switch, MLAG, Compute Nodes, Ceph Storage, and VERTA"
+            class="proj-diagram-img"
+          />
+        </div>
+        <div class="proj-diagram-caption">
+          Architecture: Client Uplink Switch → SN 2700 100G (MLAG) → Arista 100G (CEPH-Replica) → 3×Infra + 17×Compute · 6×Storage · 1×Verta
+        </div>
+      </div>
+      --> 
+      <!-- My Involvement -->
+      <div class="proj-involvement">
+        <div class="pi-label">My Involvement</div>
+        <div class="pi-tags">
+          <span class="pi-tag">🔩 Hardware Mounting</span>
+          <span class="pi-tag">🎮 GPU Installation (Nvidia A1000)</span>
+          <span class="pi-tag">🐧 OS Installation</span>
+          <span class="pi-tag pi-tag-ongoing">⚙️ Configuration In Progress</span>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="proj-techs" style="padding:0;margin-top:1.2rem;">
+        <span class="ptag">OpenStack</span><span class="ptag">Ceph Storage</span>
+        <span class="ptag">Nvidia A1000 GPU</span><span class="ptag">JBOD</span>
+        <span class="ptag">Arista 100G Switch</span><span class="ptag">MLAG</span>
+        <span class="ptag">Linux Ubuntu</span><span class="ptag">Networking</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ CONTACT ══════ -->
+<section id="contact" class="section-alt">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num" style="color:var(--c2)">06 /</span>
+      <h2 class="section-title">Get In <em class="grad1">Touch</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-text fade-in">
+        <h3>Let's connect &amp; build something great</h3>
+        <p>I'm open to exciting opportunities in Data Center, HPC, and Cloud Infrastructure. Fill the form and your message lands directly in my inbox.</p>
+        <div class="contact-links">
+          <a href="mailto:atharv.spise@gmail.com" class="contact-link">
+            <div class="cl-icon">✉️</div>
+            <div><div class="cl-label">Email</div><div class="cl-val">atharv.spise@gmail.com</div></div>
+          </a>
+          <a href="http://www.linkedin.com/in/atharv-pise-8128a6271" target="_blank" rel="noopener" class="contact-link">
+            <div class="cl-icon">💼</div>
+            <div><div class="cl-label">LinkedIn</div><div class="cl-val">linkedin.com/in/atharv-pise</div></div>
+          </a>
+          <div class="contact-link">
+            <div class="cl-icon">📍</div>
+            <div><div class="cl-label">Location</div><div class="cl-val">Pune, Maharashtra, India</div></div>
+          </div>
+        </div>
+        <div class="contact-note">
+          <span class="cn-icon">📬</span>
+          <span>Clicking <strong>Send</strong> opens your email app pre-filled — just hit send from there.</span>
+        </div>
+      </div>
+      <div class="contact-form fade-in d1">
+        <div class="form-group">
+          <label class="form-label" for="name">Your Name</label>
+          <input type="text" id="name" class="form-input" placeholder="John Doe"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Your Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="john@company.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <input type="text" id="subject" class="form-input" placeholder="Job Opportunity / Collaboration"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea id="message" class="form-textarea" placeholder="Hi Atharv, I came across your portfolio and would like to discuss..."></textarea>
+        </div>
+        <a id="mail-link" href="#" class="btn-primary btn-full" onclick="return sendMail(event)"
+           style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;">
+          ✉️ &nbsp;Send to My Email
+        </a>
+        <p id="form-msg" class="form-success" style="display:none;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="footer-logo">Atharv Pise</div>
+  <div class="footer-copy">© 2025 · Technical Support Engineer · Pune, Maharashtra, India</div>
+  <a href="#hero" class="footer-top">↑ Top</a>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
